@@ -106,11 +106,12 @@ public class Dog               // accesses modifier - "Class" - name of class
                                             the same across instances of class fields without 
                                             static can be unique for each instance of a class */
 
-    public Dog(String breed)                /* constructor called with instantiating object instance of class */
+    public Dog(String breed)                /* constructor called with instantiating object 
+                                            instance of class */
     {   
-        this.breed = breed;                 /* when an instance of Dog is created the constructor will set this 
-                                                field to the data value passed in "this" is used to references 
-                                                methods and fields attatched to the class */
+        this.breed = breed;                 /* when an instance of Dog is created the constructor 
+                                            will set this field to the data value passed in "this"
+                                            is used to references methods and fields attatched to the class */
     }
 
     public String getBreed()                /* class method 
