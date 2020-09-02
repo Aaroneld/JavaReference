@@ -71,14 +71,14 @@ numList.forEach(ele -> System.out.println(ele)); /* forEach element in numList p
 
 > **SIDE NOTE** - Lambda Expression
 >
-> The simplest Lambda expression contains a single parameter and an expression/
+> The simplest Lambda expression contains a single parameter and an expression\
 >     `parameter -> expression`
 >
->  To use more then one parameter wrap them in parentheses/
+>  To use more then one parameter wrap them in parentheses\
 >      `(param1, param2) -> expression`
 >
 >  expressions must immediatley return a value if you need to perform additional operations
->  in a Lambda expression encapsulate it inside of a code block {}/
+>  in a Lambda expression encapsulate it inside of a code block {}\
 >      `parameter -> {...code}`
        
  The first parameter in the ArrayList forEach method takes a Consumer interface class that effectively returns
