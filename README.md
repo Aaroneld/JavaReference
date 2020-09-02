@@ -49,7 +49,7 @@ slower (sometimes significantly so) on modern 64 bit processors.
 <sup>2</sup> Insert a little piece on how Java stores boolean values.
 
 <sup>3</sup> `char` is the only unsigned type in Java. This means `char` cannot
-hold negative numbers, which is why it can hold twice high of a positive value
+hold negative numbers, which is why it can hold twice as high of a positive value
 as `short`, despite using the same number of bits.
 
 ## Java access modifier visibility
