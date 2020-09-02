@@ -30,23 +30,35 @@ and `'的'` = '\u7684' = `30340`.
 
 ## Java primitive data types<sup>1</sup>
 
-| Type                 |          Bits |              Minimum value |             Maximum value | Default value |
-| -------------------- | ------------: | -------------------------: | ------------------------: | ------------: |
-| **boolean**          | 1<sup>2</sup> |                    `false` |                    `true` |       `false` |
-| byte                 |             8 |                       -128 |                       127 |             0 |
-| **char**<sup>3</sup> |            16 |            `'\u0000'` or 0 |      `'\uffff'` or 65,535 |    `'\u0000'` |
-| short                |            16 |                    -32,768 |                    32,767 |             0 |
-| **int**              |            32 |             -2,147,483,648 |             2,147,483,647 |             0 |
-| **long**             |            64 | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |            0L |
-| float                |            32 |                            |                           |            0f |
-| **double**           |            64 |                            |                           |            0d |
+| Type                 |                Bits |              Minimum value |             Maximum value | Default value |
+| -------------------- | ------------------: | -------------------------: | ------------------------: | ------------: |
+| **boolean**          | Varies <sup>2</sup> |                    `false` |                    `true` |       `false` |
+| byte                 |                   8 |                       -128 |                       127 |             0 |
+| **char**<sup>3</sup> |                  16 |            `'\u0000'` or 0 |      `'\uffff'` or 65,535 |    `'\u0000'` |
+| short                |                  16 |                    -32,768 |                    32,767 |             0 |
+| **int**              |                  32 |             -2,147,483,648 |             2,147,483,647 |             0 |
+| **long**             |                  64 | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |            0L |
+| float                |                  32 |   ~-3.41 × 10<sup>38</sup> |   ~3.41 × 10<sup>38</sup> |            0f |
+| **double**           |                  64 |  ~-1.80 × 10<sup>308</sup> |  ~1.80 × 10<sup>308</sup> |            0d |
 
 <sup>1</sup> Bolded types in the table are the most commonly used types. They
 should be used in most cases unless there is a specific reason to use one of the
 rarer types. Saving memory is rarely a good reason, as shorter types are often
 slower (sometimes significantly so) on modern 64 bit processors.
 
-<sup>2</sup> Insert a little piece on how Java stores boolean values.
+<sup>2</sup> A `boolean` will always use a single bit to represent it's value,
+the bit will be set to 0 for false, and 1 for true. Unfortunately, no modern
+computer architecture is able to efficiently access memory in groups of less
+than eight bits at a time. So even though a `boolean` only uses a single bit, it
+will always store that single useful bit with at least 7 unused bits, these
+unused bits will always be set to 0. Because 64 bit computers are fastest when
+using 32 and 64 bit values, as a general rule, the JVM uses 32 bits (1 used, 31
+unused) to store most booleans. However, because that could result in a huge
+waste of memory if using a large number of booleans, the JVM will only use 8
+bits (1 used, 7 unused) to store booleans in an array. This is one of the rare
+cases when the JVM will sacrifice speed for memory savings. Generally, such a
+sacrifice is only justified if the amount of memory saved is potentially
+enormous, as is the case here.
 
 <sup>3</sup> `char` is the only unsigned type in Java. This means `char` cannot
 hold negative numbers, which is why it can hold twice as high of a positive value
@@ -54,12 +66,16 @@ as `short`, despite using the same number of bits.
 
 ## Java access modifier visibility
 
-| Modifier      | Declaring class | Declaring package |  Subclasses   |  Everywhere   |
-| ------------- | :-------------: | :---------------: | :-----------: | :-----------: |
-| public        |   **Visible**   |    **Visible**    |  **Visible**  |  **Visible**  |
-| protected     |   **Visible**   |    **Visible**    |  **Visible**  | _Not Visible_ |
-| _unspecified_ |   **Visible**   |    **Visible**    | _Not Visible_ | _Not Visible_ |
-| private       |   **Visible**   |   _Not Visible_   | _Not Visible_ | _Not Visible_ |
+| Modifier                  | Declaring class | Declaring package |  Subclasses   |  Everywhere   |
+| ------------------------- | :-------------: | :---------------: | :-----------: | :-----------: |
+| public                    |   **Visible**   |    **Visible**    |  **Visible**  |  **Visible**  |
+| protected                 |   **Visible**   |    **Visible**    |  **Visible**  | _Not Visible_ |
+| _unspecified_<sup>1</sup> |   **Visible**   |    **Visible**    | _Not Visible_ | _Not Visible_ |
+| private                   |   **Visible**   |   _Not Visible_   | _Not Visible_ | _Not Visible_ |
+
+<sup>1</sup> The name of this access level is _package-private_. However,
+package-private is not a valid Java keyword, and it is always specified by
+simply omitting the access modifier.
 
 #### Compiling Java for runtime
 
