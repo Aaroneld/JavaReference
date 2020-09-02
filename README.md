@@ -58,7 +58,7 @@ waste of memory if using a large number of booleans, the JVM will only use 8
 bits (1 used, 7 unused) to store booleans in an array. This is one of the rare
 cases when the JVM will sacrifice speed for memory savings. Generally, such a
 sacrifice is only justified if the amount of memory saved is potentially
-enormous, which is the case here.
+enormous, as is the case here.
 
 <sup>3</sup> `char` is the only unsigned type in Java. This means `char` cannot
 hold negative numbers, which is why it can hold twice as high of a positive value
@@ -66,12 +66,16 @@ as `short`, despite using the same number of bits.
 
 ## Java access modifier visibility
 
-| Modifier      | Declaring class | Declaring package |  Subclasses   |  Everywhere   |
-| ------------- | :-------------: | :---------------: | :-----------: | :-----------: |
-| public        |   **Visible**   |    **Visible**    |  **Visible**  |  **Visible**  |
-| protected     |   **Visible**   |    **Visible**    |  **Visible**  | _Not Visible_ |
-| _unspecified_ |   **Visible**   |    **Visible**    | _Not Visible_ | _Not Visible_ |
-| private       |   **Visible**   |   _Not Visible_   | _Not Visible_ | _Not Visible_ |
+| Modifier                  | Declaring class | Declaring package |  Subclasses   |  Everywhere   |
+| ------------------------- | :-------------: | :---------------: | :-----------: | :-----------: |
+| public                    |   **Visible**   |    **Visible**    |  **Visible**  |  **Visible**  |
+| protected                 |   **Visible**   |    **Visible**    |  **Visible**  | _Not Visible_ |
+| _unspecified_<sup>1</sup> |   **Visible**   |    **Visible**    | _Not Visible_ | _Not Visible_ |
+| private                   |   **Visible**   |   _Not Visible_   | _Not Visible_ | _Not Visible_ |
+
+<sup>1</sup> The name of this access level is _package-private_. However,
+package-private is not a valid Java keyword, and it is always specified by
+simply omitting the access modifier.
 
 #### Compiling Java for runtime
 
