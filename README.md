@@ -21,7 +21,10 @@ requires two different comparison operators.
 <sup>2</sup> Character literals can only contain a _single_ character. A single
 character string literal (_ie_ `"A"`) is not a character and cannot be assigned
 to a `char`. Similarly, a character literal (_ie_ `'A'`) cannot be assigned to a
-`String`.
+`String`. A character literal is actually a numeric value that represents the
+Unicode value of the quoted character, and may either contain the actual
+character, or the character's value in hexidecimal. _Ie_ `'A'` = `'\u0041'` = `65`
+and `'的'` = '\u7684' = `30340`.
 
 <sup>3</sup> [The full reference to Java string format options](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax)
 
