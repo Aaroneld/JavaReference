@@ -41,10 +41,10 @@ and `'的'` = '\u7684' = `30340`.
 | float                |            32 |                            |                           |            0f |
 | **double**           |            64 |                            |                           |            0d |
 
-<sup>1<sup> Bolded types in the table are the most commonly used types. They
-should be used in most cases unless there is a specific reason one of the rarer
-types. Saving memory is rarely a good reason, as shorter types are often slower
-(sometimes significantly so) on modern 64 bit processors.
+<sup>1</sup> Bolded types in the table are the most commonly used types. They
+should be used in most cases unless there is a specific reason to use one of the
+rarer types. Saving memory is rarely a good reason, as shorter types are often
+slower (sometimes significantly so) on modern 64 bit processors.
 
 <sup>2</sup> Insert a little piece on how Java stores boolean values.
 
