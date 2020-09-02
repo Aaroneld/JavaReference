@@ -26,6 +26,15 @@
 
 - Bolded types in the above table are the most commonly used
 
+## Java access modifier visibility
+
+| Modifier      | Declaring class | Declaring package | Subclasses | Everywhere |
+| ------------- | --------------- | ----------------- | ---------- | ---------- |
+| public        | Y               | Y                 | Y          | Y          |
+| protected     | Y               | Y                 | Y          | N          |
+| _unspecified_ | Y               | Y                 | N          | N          |
+
+#### Compiling Java for runtime
 
     javac <package>/*.java
     jar cvfe <name>.jar <package>.<main-class> <package>/*.class
