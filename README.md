@@ -114,9 +114,9 @@ public class Dog               <--- accesses modifier - "Class" - name of class
 #### Instantiating a class object
 
 ```java
-Dog corgi = new Dog("Corgi"); <-- instantiates a Dog object which is an instance of class 
+Dog corgi = new Dog("Corgi"); /* instantiates a Dog object which is an instance of class 
                               Dog passes in String breed value into the constructor to set 
-                              the field internal to the class
+                              the field internal to the class */
 ```
                                
 #### Invoking class methods
