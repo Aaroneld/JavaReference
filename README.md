@@ -28,11 +28,12 @@
 
 ## Java access modifier visibility
 
-| Modifier      | Declaring class | Declaring package | Subclasses | Everywhere |
-| ------------- | --------------- | ----------------- | ---------- | ---------- |
-| public        | Y               | Y                 | Y          | Y          |
-| protected     | Y               | Y                 | Y          | N          |
-| _unspecified_ | Y               | Y                 | N          | N          |
+| Modifier      | Declaring class | Declaring package |  Subclasses   |  Everywhere   |
+| ------------- | :-------------: | :---------------: | :-----------: | :-----------: |
+| public        |   **Visible**   |    **Visible**    |  **Visible**  |  **Visible**  |
+| protected     |   **Visible**   |    **Visible**    |  **Visible**  | _Not Visible_ |
+| _unspecified_ |   **Visible**   |    **Visible**    | _Not Visible_ | _Not Visible_ |
+| private       |   **Visible**   |   _Not Visible_   | _Not Visible_ | _Not Visible_ |
 
 #### Compiling Java for runtime
 
