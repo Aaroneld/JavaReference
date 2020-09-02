@@ -1,18 +1,16 @@
 # Quick Java Reference
-## JS => Java
 
-| Java Primitives |     Same as JavaScript                     | Access Modifiers 
-| -------------- | -----------------------------------------  | -------------------------------------------------------------------- |
-| boolean        |  Arithmatic Operators                      | Public - Open Access                                                 |
-| byte (8 bits)  |  Boolean Operators                         | Private - Only accessible within class                               |
-| char           |  Function/Method Invocations               | Protected - Accessible within same package/classes in other packages |
-| short (32bits) |  Loops (for, while, do while)              | Default(no need to set) - Accessible only within package             |
-| int (32 bits)  |  Switch Statements                         | -------------------------------------------------------------------- |
-| long (64bits)  |  If-else-if conditionals                   | -------------------------------------------------------------------- |
-| float (32 bits)|  Ternary Statement                         | -------------------------------------------------------------------- | 
-| double(64bits) | -------------------------------- | -------------------------------------------------------------------- |
+## JS <=> Java
 
-#### Compiling Java for runtime 
+| Same as JavaScript                 | Java Gotchas for JavaScript Programmers                                                                                           |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Arithmetical operators             | Java has no separate "exact" comparison operators (`===`, `!==`)                                                                  |
+| Ternary statements                 | Double quotes (`"`) must enclose string literals                                                                                  |
+| Basic method invocations           | Single quotes (`'`) enclose character literals and must be assigned to type `char`.                                               |
+| Loops (`for`, `while`, `do while`) | Double and single quotes may not be substituted for each other                                                                    |
+| `switch` conditionals              | There are no backtick (\`) string literals. Use `String.format` and `System.out.printf` instead.                                  |
+| `if`-`then`-`else` conditionals    | There are no top-level functions, only class methods. Top level functions can be emulated to a certain extent with static methods |
+
 
     javac <package>/*.java
     jar cvfe <name>.jar <package>.<main-class> <package>/*.class
