@@ -2,14 +2,28 @@
 
 ## JS ⬄ Java
 
-| Same as JavaScript                 | Java Gotchas for JavaScript Programmers                                                                                           |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Arithmetical operators             | Java has no separate "exact" comparison operators (`===`, `!==`)                                                                  |
-| Ternary statements                 | Double quotes (`"`) must enclose string literals                                                                                  |
-| Basic method invocations           | Single quotes (`'`) enclose character literals and must be assigned to type `char`.                                               |
-| Loops (`for`, `while`, `do while`) | Double and single quotes may not be substituted for each other                                                                    |
-| `switch` conditionals              | There are no backtick (\`) string literals. Use `String.format` and `System.out.printf` instead.                                  |
-| `if`-`then`-`else` conditionals    | There are no top-level functions, only class methods. Top level functions can be emulated to a certain extent with static methods |
+| Same as JavaScript                 | Java Gotchas for JavaScript Programmers                                                                                                                                                                                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arithmetical operators             | Java has no separate "exact" comparison operators (`===`, `!==`).<sup>1</sup>                                                                                                                                                                                                                             |
+| Ternary statements                 | Double quotes (`"`) must enclose string literals                                                                                                                                                                                                                                                          |
+| Basic method invocations           | Single quotes (`'`) enclose character literals and must be assigned to type `char`. <sup>2</sup>                                                                                                                                                                                                          |
+| Loops (`for`, `while`, `do while`) | Double and single quotes may not be substituted for each other                                                                                                                                                                                                                                            |
+| `switch` conditionals              | There are no backtick (\`) string literals. Use [`String.format`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format) and [`System.out.printf`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#printf) instead.<sup>3</sup> |
+| `if`-`then`-`else` conditionals    | There are no top-level functions, only class methods. Top level functions can be emulated to a certain extent with static methods                                                                                                                                                                         |
+
+<sup>1</sup> Because Java knows the type of all data, there is no reason to
+have different comparison operators. All comparisons are by value, this has the
+effect that primitive types are always compared like JavaScript `==`, while
+reference types (mostly class instances) are always compared like JavaScript
+`===`. In JavaScript, there are no primitive data types, which is why JavaScript
+requires two different comparison operators.
+
+<sup>2</sup> Character literals can only contain a _single_ character. A single
+character string literal (_ie_ `"A"`) is not a character and cannot be assigned
+to a `char`. Similarly, a character literal (_ie_ `'A'`) cannot be assigned to a
+`String`.
+
+<sup>3</sup> [The full reference to Java string format options](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax)
 
 ## Java primitive data types
 
