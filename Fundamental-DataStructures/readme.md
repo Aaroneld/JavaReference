@@ -227,7 +227,7 @@ while(iter.hasNext()) // while there is another element in the data structure
 }
 ```   
     
-## Sort 
+#### Sort 
 
 HashSets are not sortable on their own and must be converted to another data structure in order to be sorted 
 
