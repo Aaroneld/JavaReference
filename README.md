@@ -81,30 +81,30 @@ System.out.println(...)
 #### Class Structure 
 
 ```java
-public class Dog               <--- accesses modifier - "Class" - name of class
+public class Dog               // accesses modifier - "Class" - name of class
 {
-    private String breed;      <--- a class field(access modifier, data type, name) 
-                               fields are pieces of data that classes hold in variables
+    private String breed;      /* a class field(access modifier, data type, name) 
+                               fields are pieces of data that classes hold in variables */
 
-    private static int numberofDogs         <---- static field (means that its value is 
+    private static int numberofDogs         /* static field (means that its value is 
                                             the same across instances of class fields without 
-                                            static can be unique for each instance of a class
+                                            static can be unique for each instance of a class */
 
-    public Dog(String breed)                <--- constructor called with instantiating object instance of class
+    public Dog(String breed)                /* constructor called with instantiating object instance of class */
     {   
-        this.breed = breed;                 <-- when an instance of Dog is created the constructor will set this 
+        this.breed = breed;                 /* when an instance of Dog is created the constructor will set this 
                                                 field to the data value passed in "this" is used to references 
-                                                methods and fields attatched to the class
+                                                methods and fields attatched to the class */
     }
 
-    public String getBreed()                <-- class method 
-                                            (access modifier, data type it returns, name, parameters(empty)
+    public String getBreed()                /* class method 
+                                            (access modifier, data type it returns, name, parameters(empty) */
     {
         return this.breed;
     }
 
-    public void setBreed(String breed)      <-- class method 
-                                            returns nothing takes one parameter pattern - datatype - param name
+    public void setBreed(String breed)      /* class method 
+                                            returns nothing takes one parameter pattern - datatype - param name */
     {
         this.breed = breed;
     }
