@@ -13,16 +13,16 @@
 
 ## Java primitive data types
 
-| Type        | Bits | Minimum value              | Maximum value             | Default value |
-| ----------- | ---- | -------------------------- | ------------------------- | ------------- |
-| **boolean** |      | `false`                    | `true`                    | `false`       |
-| byte        | 8    | -128                       | 127                       | 0             |
-| **char**    | 16   | '\u0000'                   | '\uffff'                  | '\u0000'      |
-| short       | 16   | -32,768                    | 32,767                    | 0             |
-| **int**     | 32   | -2,147,483,648             | 2,147,483,647             | 0             |
-| **long**    | 64   | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 | 0L            |
-| float       | 32   |                            |                           | 0f            |
-| **double**  | 64   |                            |                           | 0d            |
+| Type        | Bits |              Minimum value |             Maximum value | Default value |
+| ----------- | ---: | -------------------------: | ------------------------: | ------------: |
+| **boolean** |      |                    `false` |                    `true` |       `false` |
+| byte        |    8 |                       -128 |                       127 |             0 |
+| **char**    |   16 |                   '\u0000' |                  '\uffff' |      '\u0000' |
+| short       |   16 |                    -32,768 |                    32,767 |             0 |
+| **int**     |   32 |             -2,147,483,648 |             2,147,483,647 |             0 |
+| **long**    |   64 | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |            0L |
+| float       |   32 |                            |                           |            0f |
+| **double**  |   64 |                            |                           |            0d |
 
 - Bolded types in the above table are the most commonly used
 
