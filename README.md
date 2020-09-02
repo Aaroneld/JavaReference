@@ -23,25 +23,34 @@ character string literal (_ie_ `"A"`) is not a character and cannot be assigned
 to a `char`. Similarly, a character literal (_ie_ `'A'`) cannot be assigned to a
 `String`. A character literal is actually a numeric value that represents the
 Unicode value of the quoted character, and may either contain the actual
-character, or the character's value in hexidecimal. _Ie_ `'A'` = `'\u0041'` = `65`
+character, or the character's value in hexadecimal. _IE_ `'A'` = `'\u0041'` = `65`
 and `'的'` = '\u7684' = `30340`.
 
 <sup>3</sup> [The full reference to Java string format options](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax)
 
-## Java primitive data types
+## Java primitive data types<sup>1</sup>
 
-| Type        | Bits |              Minimum value |             Maximum value | Default value |
-| ----------- | ---: | -------------------------: | ------------------------: | ------------: |
-| **boolean** |      |                    `false` |                    `true` |       `false` |
-| byte        |    8 |                       -128 |                       127 |             0 |
-| **char**    |   16 |                   '\u0000' |                  '\uffff' |      '\u0000' |
-| short       |   16 |                    -32,768 |                    32,767 |             0 |
-| **int**     |   32 |             -2,147,483,648 |             2,147,483,647 |             0 |
-| **long**    |   64 | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |            0L |
-| float       |   32 |                            |                           |            0f |
-| **double**  |   64 |                            |                           |            0d |
+| Type                 |          Bits |              Minimum value |             Maximum value | Default value |
+| -------------------- | ------------: | -------------------------: | ------------------------: | ------------: |
+| **boolean**          | 1<sup>2</sup> |                    `false` |                    `true` |       `false` |
+| byte                 |             8 |                       -128 |                       127 |             0 |
+| **char**<sup>3</sup> |            16 |            `'\u0000'` or 0 |      `'\uffff'` or 65,535 |    `'\u0000'` |
+| short                |            16 |                    -32,768 |                    32,767 |             0 |
+| **int**              |            32 |             -2,147,483,648 |             2,147,483,647 |             0 |
+| **long**             |            64 | -9,223,372,036,854,775,808 | 9,223,372,036,854,775,807 |            0L |
+| float                |            32 |                            |                           |            0f |
+| **double**           |            64 |                            |                           |            0d |
 
-- Bolded types in the above table are the most commonly used
+<sup>1<sup> Bolded types in the table are the most commonly used types. They
+should be used in most cases unless there is a specific reason one of the rarer
+types. Saving memory is rarely a good reason, as shorter types are often slower
+(sometimes significantly so) on modern 64 bit processors.
+
+<sup>2</sup> Insert a little piece on how Java stores boolean values.
+
+<sup>3</sup> `char` is the only unsigned type in Java. This means `char` cannot
+hold negative numbers, which is why it can hold twice high of a positive value
+as `short`, despite using the same number of bits.
 
 ## Java access modifier visibility
 
