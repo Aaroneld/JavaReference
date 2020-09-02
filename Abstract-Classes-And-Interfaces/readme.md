@@ -16,7 +16,7 @@ Abstract classes can have both abstract and concrete methods
 - Concrete methods perform preset operations outlined in the abstract
   class, but can be overridden.
 
-## Declaration
+#### Declaration
 
 ```java
 public abstract class Person // access modifier abstract modifier class name
@@ -46,7 +46,7 @@ public abstract class Person // access modifier abstract modifier class name
 }
 ```
 
-## Extending a concrete subclass from an abstract base
+#### Extending a concrete subclass from an abstract base
 
 ```java
 public class Adult extends Person // declare class extending abstract class
