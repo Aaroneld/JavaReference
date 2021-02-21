@@ -107,7 +107,7 @@ Hashmaps are collections of pieces of data organized in <key,value> (Entries) pa
 
 #### Declare
 
-``java
+```java
 Map<String, Integer> hashMap = new HashMap<>(): /* Type(Map key of type String value of type Integer)
                                                     name (=) new HashMap class object  */
 ```                                                     
